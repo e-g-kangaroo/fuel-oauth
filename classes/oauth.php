@@ -39,10 +39,11 @@ abstract class OAuth {
 	 * @return  string
 	 * @throws  Exception
 	 */
-	public static function remote($url, array $options = NULL)
+	public static function remote($url, array $options = NULL, $method = 'GET')
 	{
 		$request = \Request::forge($url, array('driver' => 'curl'))
 			->set_options($options)
+			->set_method($method)
 			->execute();
 
 		return $request->response();

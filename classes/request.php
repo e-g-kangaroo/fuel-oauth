@@ -508,7 +508,7 @@ class Request {
 			$url = "{$url}?{$query}";
 		}
 
-		return OAuth::remote($url, $options);
+		return OAuth::remote($url, $options, $this->method);
 	}
 
 } // End Request

@@ -215,7 +215,7 @@ abstract class Provider {
 	public function access_token(Consumer $consumer, Token_Request $token, array $params = NULL)
 	{
 		// Create a new GET request for a request token with the required parameters
-		$request = Request::forge('access', 'GET', $this->url_access_token(), array(
+		$request = Request::forge('access', 'POST', $this->url_access_token(), array(
 			'oauth_consumer_key' => $consumer->key,
 			'oauth_token'        => $token->access_token,
 			'oauth_verifier'     => $token->verifier,
